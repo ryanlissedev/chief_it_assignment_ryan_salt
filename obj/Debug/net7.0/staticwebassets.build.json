@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "yMQ7/luyzQ+y+eAhH+jZTXVlcdxgu5eWRZDjXpPzGN0=",
+  "Source": "next_dotnet",
+  "BasePath": "_content/next_dotnet",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
