@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using next_dotnet.Data;
 using next_dotnet.Models;
 
@@ -46,5 +50,12 @@ namespace next_dotnet.Services
             return (isFullOrder, result);
         }
 
+        public async Task<List<Order>> GetAllOrdersAsync()
+        {
+            // Retrieve all orders from the database using Entity Framework Core.
+            var orders = await _context.Orders.ToListAsync();
+
+            return orders;
+        }
     }
 }

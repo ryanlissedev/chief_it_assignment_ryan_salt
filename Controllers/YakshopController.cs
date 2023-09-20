@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using next_dotnet.Models;
 using next_dotnet.Services;
 
@@ -40,12 +43,18 @@ namespace next_dotnet.Controllers
             return Ok(new { herd });
         }
 
-
         [HttpGet("stock/{days:int}")]
         public async Task<IActionResult> GetStockAsync(int days)
         {
             var stock = await _stockService.GetStockAsync(days);
             return Ok(stock);
+        }
+
+        [HttpGet ("orders")]
+        public async Task<ActionResult<IEnumerable<Order>>> GetAllOrders()
+        {
+            var orders = await _orderService.GetAllOrdersAsync();
+            return Ok(orders);
         }
 
         [HttpPost("order/{days:int}", Name = "PlaceOrderRoute")]
@@ -60,5 +69,4 @@ namespace next_dotnet.Controllers
             return StatusCode(206, resultingOrder);
         }
     }
-
-    }
+}

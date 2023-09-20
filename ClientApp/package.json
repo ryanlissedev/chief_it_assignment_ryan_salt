@@ -8,6 +8,7 @@
     "start": "concurrently \"dotnet watch run --project ../next_dotnet.csproj\" \"npm run dev\"",
     "lint": "next lint"
   },
+    "proxy": "http://localhost:45953",
   "dependencies": {
     "@hookform/resolvers": "^3.3.1",
     "@radix-ui/react-dropdown-menu": "^2.0.5",

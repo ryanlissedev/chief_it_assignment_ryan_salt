@@ -4,7 +4,7 @@ using next_dotnet.Services;
 
 
 var builder = WebApplication.CreateBuilder(args);
-
+//
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(
@@ -49,7 +49,7 @@ if (app.Environment.IsDevelopment())
     });
 }
 
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 
